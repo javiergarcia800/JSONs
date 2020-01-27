@@ -1,0 +1,1683 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "title" : "RESTAPI_Siniestros_DataLake",
+    "version" : "1.0.0",
+    "description" : "RESTAPI_Siniestros_DataLake"
+  },
+  "paths" : {
+    "/polizas" : {
+      "get" : {
+        "operationId" : "getPolizas",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/RespuestaConsultaPoliza"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve polizas",
+        "parameters" : [ {
+          "name" : "apellidoPaterno",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Apellido paterno del asegurado",
+          "required" : false
+        }, {
+          "name" : "apellidoMaterno",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Apellido materno del asegurado"
+        }, {
+          "name" : "nombreAsegurado",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Nombre del asegurado"
+        }, {
+          "name" : "fechaNacimiento",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Fecha de nacimiento del asegurado"
+        }, {
+          "name" : "sexoAsegurado",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Sexo del asegurado (M ó F)",
+          "required" : false
+        }, {
+          "name" : "CDMCT",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Código de garantia (opcional)"
+        }, {
+          "name" : "numeroPoliza",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Póliza identificadora del asegurado"
+        }, {
+          "name" : "idPersona",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Código de afiliación  persona"
+        }, {
+          "name" : "fecha",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Fecha de búsqueda"
+        } ]
+      }
+    },
+    "/notasMedicas" : {
+      "get" : {
+        "operationId" : "getNotasMedicas",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/RespuestaConsultaNotasMedicas"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve notasMedicas",
+        "parameters" : [ {
+          "name" : "numeroReclamacion",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Número de reclamación"
+        }, {
+          "name" : "idSolicitud",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Número único de solicitud"
+        } ]
+      }
+    },
+    "/reclamaciones" : {
+      "get" : {
+        "operationId" : "getReclamaciones",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/RespuestaConsultaReclamacion"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve reclamacion",
+        "parameters" : [ {
+          "name" : "apellidoPaterno",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Apellido paterno del asegurado"
+        }, {
+          "name" : "apellidoMaterno",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Apellido materno del asegurado"
+        }, {
+          "name" : "nombreAsegurado",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Nombre del asegurado"
+        }, {
+          "name" : "fechaNacimiento",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Fecha de nacimiento del asegurado"
+        }, {
+          "name" : "sexoAsegurado",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Sexo del asegurado (M ó F)"
+        }, {
+          "name" : "codigoReclamacion",
+          "in" : "query",
+          "type" : "string",
+          "description" : "Código de reclamación"
+        } ]
+      }
+    },
+    "/endosos" : {
+      "get" : {
+        "operationId" : "getEndosos",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/RespuestaEndosos"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve endosos"
+      }
+    },
+    "/padecimientos" : {
+      "get" : {
+        "operationId" : "getPadecimientos",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/RespuestaPadecimientos"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve padecimientos"
+      }
+    },
+    "/detallesCobertura" : {
+      "get" : {
+        "operationId" : "getDetallesCobertura",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/RespuestaDetallesCobertura"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve detallesCobertura"
+      }
+    },
+    "/acumuladosSiniestro" : {
+      "get" : {
+        "operationId" : "getAcumuladosSiniestro",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/RespuestaAcumuladosSiniestro"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve acumuladosSiniestro"
+      }
+    },
+    "/importesTransito" : {
+      "get" : {
+        "operationId" : "getImportesTransito",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/RespuestaImportesTransito"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve importesTransito"
+      }
+    },
+    "/detallePagos" : {
+      "get" : {
+        "operationId" : "getDetallePagos",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/RespuestaConsultaNotasMedicas"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve detallePagos"
+      }
+    },
+    "/tramitesReclamacion" : {
+      "get" : {
+        "operationId" : "getTramitesReclamacion",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/RespuestaConsultaNotasMedicas"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve tramitesReclamacion"
+      }
+    },
+    "/aseguradosPoliza" : {
+      "get" : {
+        "operationId" : "getAseguradosPoliza",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/RespuestaConsultaNotasMedicas"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve aseguradosPoliza"
+      }
+    },
+    "/detallesPoliza" : {
+      "get" : {
+        "operationId" : "getDetallesPoliza",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/RespuestaConsultaNotasMedicas"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve detallesPoliza"
+      }
+    },
+    "/recibosPoliza" : {
+      "get" : {
+        "operationId" : "getRecibosPoliza",
+        "responses" : {
+          "200" : {
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/RespuestaConsultaNotasMedicas"
+            }
+          }
+        },
+        "produces" : [ "application/json" ],
+        "description" : "Retrieve recibosPoliza"
+      }
+    }
+  },
+  "basePath" : "/restapi_siniestros_datalake/v1",
+  "definitions" : {
+    "RespuestaConsultaNotasMedicas" : {
+      "type" : "object",
+      "properties" : {
+        "respuesta" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/NotaMedica"
+          }
+        }
+      }
+    },
+    "NotaMedica" : {
+      "type" : "object",
+      "properties" : {
+        "numeroReclamacion" : {
+          "type" : "string"
+        },
+        "idSolicitud" : {
+          "type" : "string"
+        },
+        "claveIntegradaSistemaOrigen" : {
+          "type" : "string"
+        },
+        "claveSistemaOrigen" : {
+          "type" : "string"
+        },
+        "claveTipoNota" : {
+          "type" : "string"
+        },
+        "descripcionClaveTipoNota" : {
+          "type" : "string"
+        },
+        "numeroConsecutivoNota" : {
+          "type" : "string"
+        },
+        "descripcionNota" : {
+          "type" : "string"
+        },
+        "fechaHoraNota" : {
+          "type" : "string"
+        },
+        "claveIdentificadorUsarioNota" : {
+          "type" : "string"
+        },
+        "nombreUsuarioNota" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RespuestaConsultaPoliza" : {
+      "type" : "object",
+      "properties" : {
+        "respuesta" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Poliza"
+          }
+        }
+      }
+    },
+    "Poliza" : {
+      "type" : "object",
+      "properties" : {
+        "numeroPoliza" : {
+          "type" : "object",
+          "properties" : { }
+        },
+        "numeroPolizaCobranza" : {
+          "type" : "string"
+        },
+        "circuloMedicoContratado" : {
+          "type" : "string"
+        },
+        "claveAgente" : {
+          "type" : "string"
+        },
+        "claveEstadoDelRecibo" : {
+          "type" : "string"
+        },
+        "contratante" : {
+          "type" : "string"
+        },
+        "contrato" : {
+          "type" : "string"
+        },
+        "descripcionEstadoRecibo" : {
+          "type" : "string"
+        },
+        "esquemaAdmon" : {
+          "type" : "string"
+        },
+        "estatusPoliza" : {
+          "type" : "string"
+        },
+        "fechaEfectoMovimiento" : {
+          "type" : "string"
+        },
+        "fechaFinVig" : {
+          "type" : "string"
+        },
+        "fechaInicioVigencia" : {
+          "type" : "string"
+        },
+        "folioAgente" : {
+          "type" : "string"
+        },
+        "nivelHospitalario" : {
+          "type" : "string"
+        },
+        "numeroAseguradosDependientes" : {
+          "type" : "string"
+        },
+        "numeroAseguradosTitulares" : {
+          "type" : "string"
+        },
+        "origenPoliza" : {
+          "type" : "string"
+        },
+        "plan" : {
+          "type" : "string"
+        },
+        "planDescripcion" : {
+          "type" : "string"
+        },
+        "polizaAnterior" : {
+          "type" : "string"
+        },
+        "poseeFondoEspecial" : {
+          "type" : "string"
+        },
+        "productoComercial" : {
+          "type" : "string"
+        },
+        "productoTecnico" : {
+          "type" : "string"
+        },
+        "ramo" : {
+          "type" : "string"
+        },
+        "sistemaOrigen" : {
+          "type" : "string"
+        },
+        "tipoPoliza" : {
+          "type" : "string"
+        },
+        "vigenciaPoliza(Inicio-fin)" : {
+          "type" : "string"
+        },
+        "sumaAsegurada" : {
+          "type" : "string"
+        },
+        "deducible" : {
+          "type" : "string"
+        },
+        "fechaAltaAsegurado" : {
+          "type" : "string"
+        },
+        "estatusAsegurado" : {
+          "type" : "string"
+        },
+        "estatusRecibo" : {
+          "type" : "string"
+        },
+        "nombreAsegurado" : {
+          "type" : "string"
+        },
+        "apellidoPaternoAsegurado" : {
+          "type" : "string"
+        },
+        "apellidoMaternoAsegurado" : {
+          "type" : "string"
+        },
+        "sexoAsegurado" : {
+          "type" : "string"
+        },
+        "fechaNacimiento" : {
+          "type" : "string"
+        },
+        "coaseguroNacional" : {
+          "type" : "string"
+        },
+        "codigoGarantia" : {
+          "type" : "string"
+        },
+        "coaseguroInternacional" : {
+          "type" : "string"
+        },
+        "circuloMedico" : {
+          "type" : "string"
+        },
+        "deducibleNacional" : {
+          "type" : "string"
+        },
+        "deducibleInternacional" : {
+          "type" : "string"
+        },
+        "topeCoaseguroNacional" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RespuestaConsultaReclamacion" : {
+      "type" : "object",
+      "properties" : {
+        "respuesta" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Reclamacion"
+          }
+        }
+      }
+    },
+    "Reclamacion" : {
+      "type" : "object",
+      "properties" : {
+        "codigoPadecimientoIcd9" : {
+          "type" : "string"
+        },
+        "descripcionMedicaIcd9" : {
+          "type" : "string"
+        },
+        "codigoPadecimientoIcd10" : {
+          "type" : "string"
+        },
+        "descripcionMedicaIcd10" : {
+          "type" : "string"
+        },
+        "fechaInicioSintomas" : {
+          "type" : "string"
+        },
+        "fechaPrimerGasto" : {
+          "type" : "string"
+        },
+        "codigoFiliacion" : {
+          "type" : "string"
+        },
+        "codigoReclamacion" : {
+          "type" : "string"
+        },
+        "numeroPoliza" : {
+          "type" : "string"
+        },
+        "numeroVersionPoliza" : {
+          "type" : "string"
+        },
+        "numeroPolizaCobranza" : {
+          "type" : "string"
+        },
+        "nombreContratante" : {
+          "type" : "string"
+        },
+        "banderaBloqueoReclamacion" : {
+          "type" : "string"
+        },
+        "apellidoPaternoAsegurado" : {
+          "type" : "string"
+        },
+        "apellidoMaternoAsegurado" : {
+          "type" : "string"
+        },
+        "nombreAsegurado" : {
+          "type" : "string"
+        },
+        "fechaNacimientoAsegurado" : {
+          "type" : "string"
+        },
+        "codigoEstadoAntecedente" : {
+          "type" : "string"
+        },
+        "descripcionEstadoAntecedente" : {
+          "type" : "string"
+        },
+        "identificadorExtranjero" : {
+          "type" : "string"
+        },
+        "fechaUltimoTramite" : {
+          "type" : "string"
+        },
+        "sexoAsegurado" : {
+          "type" : "string"
+        },
+        "claveSistema" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RespuestaEndosos" : {
+      "type" : "object",
+      "properties" : {
+        "respuesta" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Endoso"
+          }
+        }
+      }
+    },
+    "Endoso" : {
+      "type" : "object",
+      "properties" : {
+        "numeroPoliza" : {
+          "type" : "string"
+        },
+        "numeroPolizaCobranza" : {
+          "type" : "string"
+        },
+        "claveOficinaEndoso" : {
+          "type" : "string"
+        },
+        "descripcionOficinaEndoso" : {
+          "type" : "string"
+        },
+        "numeroEndoso" : {
+          "type" : "string"
+        },
+        "claveTipoEndoso" : {
+          "type" : "string"
+        },
+        "descripcionTipoEndoso" : {
+          "type" : "string"
+        },
+        "descripcionNivelAplicacion" : {
+          "type" : "string"
+        },
+        "certificadoEndoso" : {
+          "type" : "string"
+        },
+        "claveEndosoExclusion" : {
+          "type" : "string"
+        },
+        "textoEndoso" : {
+          "type" : "string"
+        },
+        "fechaInicioVigencia" : {
+          "type" : "string"
+        },
+        "fechaFinVigencia" : {
+          "type" : "string"
+        },
+        "claveUsuarioEndoso" : {
+          "type" : "string"
+        },
+        "nombreUsuarioEndoso" : {
+          "type" : "string"
+        },
+        "claveEstatusEndoso" : {
+          "type" : "string"
+        },
+        "descripcionEstatusEndoso" : {
+          "type" : "string"
+        },
+        "fechaEmisionEndoso" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RespuestaPadecimientos" : {
+      "type" : "object",
+      "properties" : {
+        "respuesta" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Padecimiento"
+          }
+        }
+      }
+    },
+    "Padecimiento" : {
+      "type" : "object",
+      "properties" : {
+        "codigoAfiliacion" : {
+          "type" : "string"
+        },
+        "contadorSecuenciaObjeto" : {
+          "type" : "string"
+        },
+        "indicadorPreexistencia" : {
+          "type" : "string"
+        },
+        "codigoGrupoPadecimientoIcd9" : {
+          "type" : "string"
+        },
+        "descripcionCodigoGrupoPadecimientoIcd9" : {
+          "type" : "string"
+        },
+        "codigoPadecimientoIcd9" : {
+          "type" : "string"
+        },
+        "codigoGrupoPadecimientoIcd10" : {
+          "type" : "string"
+        },
+        "descripcionCodigoGrupoPadecimientoIcd10" : {
+          "type" : "string"
+        },
+        "indicadorPadecimiento" : {
+          "type" : "string"
+        },
+        "numeroPoliza" : {
+          "type" : "string"
+        },
+        "versionPoliza" : {
+          "type" : "string"
+        },
+        "valorExtraprimaManual" : {
+          "type" : "string"
+        },
+        "valorExtraprimaAutomatica" : {
+          "type" : "string"
+        },
+        "indicadorTipoDictamen" : {
+          "type" : "string"
+        },
+        "descripcionIndicadorTipoDictamen" : {
+          "type" : "string"
+        },
+        "codigoMonedaCoaseguroInternacional" : {
+          "type" : "string"
+        },
+        "descripcionCodigoMonedaCoaseguroInternacional" : {
+          "type" : "string"
+        },
+        "codigoMonedaCoaseguroNacional" : {
+          "type" : "string"
+        },
+        "descripcionCodigoMonedaCoaseguroNacional" : {
+          "type" : "string"
+        },
+        "unidadMonedaDeducibleInternacional" : {
+          "type" : "string"
+        },
+        "descripcionUnidadMonedaDeducibleInternacional" : {
+          "type" : "string"
+        },
+        "unidadMonedaDeducibleNacional" : {
+          "type" : "string"
+        },
+        "descripcionUnidadMonedaDeducibleNacional" : {
+          "type" : "string"
+        },
+        "codigoMonedaSumaAsegurada" : {
+          "type" : "string"
+        },
+        "descripcionCodigoMonedaSumaAsegurada" : {
+          "type" : "string"
+        },
+        "topeCoaseguroInternacional" : {
+          "type" : "string"
+        },
+        "topeCoaseguroNacional" : {
+          "type" : "string"
+        },
+        "porcentajeCoaseguroInternacional" : {
+          "type" : "string"
+        },
+        "porcentajeCoaseguroNacional" : {
+          "type" : "string"
+        },
+        "importeSumaAsegurada" : {
+          "type" : "string"
+        },
+        "valorDeducibleInternacional" : {
+          "type" : "string"
+        },
+        "valorDeducibleNacional" : {
+          "type" : "string"
+        },
+        "indicadorPolizaPadre" : {
+          "type" : "string"
+        },
+        "descripcionPolizaPadre" : {
+          "type" : "string"
+        },
+        "codigoRegionCorpoalICD" : {
+          "type" : "string"
+        },
+        "descripcionRegionCorporalICD" : {
+          "type" : "string"
+        },
+        "nivelEvolucionPadecimiento" : {
+          "type" : "string"
+        },
+        "descripcionNivelEvolucionPadecimiento" : {
+          "type" : "string"
+        },
+        "indicadorCompromiso" : {
+          "type" : "string"
+        },
+        "periodoEsperaDefecto" : {
+          "type" : "string"
+        },
+        "indicadorOrigen" : {
+          "type" : "string"
+        },
+        "descripcionIndicadorOrigen" : {
+          "type" : "string"
+        },
+        "fechaPeriodoEspera" : {
+          "type" : "string"
+        },
+        "descripcionFechaPeriodoEspera" : {
+          "type" : "string"
+        },
+        "codigoPeriodoEspera" : {
+          "type" : "string"
+        },
+        "descripcionCodigoPeriodoEspera" : {
+          "type" : "string"
+        },
+        "unidadPeriodoEspera" : {
+          "type" : "string"
+        },
+        "descripcionUnidadPeriodoEspera" : {
+          "type" : "string"
+        },
+        "indicadorPendiente" : {
+          "type" : "string"
+        },
+        "identificaExtranjero" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RespuestaDetallesCobertura" : {
+      "type" : "object",
+      "properties" : {
+        "respuesta" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/DetalleCobertura"
+          }
+        }
+      }
+    },
+    "DetalleCobertura" : {
+      "type" : "object",
+      "properties" : {
+        "codigoCoaseguro" : {
+          "type" : "string"
+        },
+        "codigoGarantia" : {
+          "type" : "string"
+        },
+        "nivelAsignacion" : {
+          "type" : "string"
+        },
+        "indicadorTipoPreexistencia" : {
+          "type" : "string"
+        },
+        "unidadDeducibleInternacional" : {
+          "type" : "string"
+        },
+        "descripcionUnidadDeducibleInternacional" : {
+          "type" : "string"
+        },
+        "unidadDeducibleNacional" : {
+          "type" : "string"
+        },
+        "descripcionUnidadDeducibleNacional" : {
+          "type" : "string"
+        },
+        "unidadTopeCoaseguroInternacional" : {
+          "type" : "string"
+        },
+        "unidadTopeCoaseguroNacional" : {
+          "type" : "string"
+        },
+        "unidadSumaAsegurada" : {
+          "type" : "string"
+        },
+        "fechaAntiguedadCobertura" : {
+          "type" : "string"
+        },
+        "fechaEfectoMovimiento" : {
+          "type" : "string"
+        },
+        "fechaFinMct" : {
+          "type" : "string"
+        },
+        "fechaInicioGarantia" : {
+          "type" : "string"
+        },
+        "fechaFinEfecto" : {
+          "type" : "string"
+        },
+        "estadoGarantia" : {
+          "type" : "string"
+        },
+        "topeCoaseguro" : {
+          "type" : "string"
+        },
+        "valorDeducibleInternacional" : {
+          "type" : "string"
+        },
+        "valorDeducibleNacional" : {
+          "type" : "string"
+        },
+        "topeCoaseguroInternacional" : {
+          "type" : "string"
+        },
+        "sumaAsegurada" : {
+          "type" : "string"
+        },
+        "valorCoaseguroInternacional" : {
+          "type" : "string"
+        },
+        "valorCoaseguroNacional" : {
+          "type" : "string"
+        },
+        "periodoEsperaAPartirDe" : {
+          "type" : "string"
+        },
+        "codigoSumaAseguradaMuerteAccidental" : {
+          "type" : "string"
+        },
+        "codigoSumaAsegurada" : {
+          "type" : "string"
+        },
+        "codigoSumaAseguradaPerdidasOrganicas" : {
+          "type" : "string"
+        },
+        "codigoSumaAseguradaReembolsoGastosMedicos" : {
+          "type" : "string"
+        },
+        "sumaAseguradaPerdidasOrganicas" : {
+          "type" : "string"
+        },
+        "sumaAseguradaMuerteAccidental" : {
+          "type" : "string"
+        },
+        "sumaAseguradaReembolsoGastosMedicos" : {
+          "type" : "string"
+        },
+        "productoTecnico" : {
+          "type" : "string"
+        },
+        "productoComercial" : {
+          "type" : "string"
+        },
+        "fechaTerminoBeneficio" : {
+          "type" : "string"
+        },
+        "codigoDeducibleNacional" : {
+          "type" : "string"
+        },
+        "descripcionDeducibleNacional" : {
+          "type" : "string"
+        },
+        "codigoDeducibleInternacional" : {
+          "type" : "string"
+        },
+        "descripcionDeducibleInternacional" : {
+          "type" : "string"
+        },
+        "tipoFechaPreexistencia" : {
+          "type" : "string"
+        },
+        "descripcionTipoFechaPreexistencia" : {
+          "type" : "string"
+        },
+        "fechaRespectoA" : {
+          "type" : "string"
+        },
+        "descripcionFechaRespectoA" : {
+          "type" : "string"
+        },
+        "fechaEspecial" : {
+          "type" : "string"
+        },
+        "acumulaGasto" : {
+          "type" : "string"
+        },
+        "descripcionAcumulaGasto" : {
+          "type" : "string"
+        },
+        "indicadorAcumula" : {
+          "type" : "string"
+        },
+        "descripcionIndicadorAcumula" : {
+          "type" : "string"
+        },
+        "eliminaPeriodoEsperaComplicaEmbarazo" : {
+          "type" : "string"
+        },
+        "descripcionEliminaPeriodoEsperaComplicaEmbarazo" : {
+          "type" : "string"
+        },
+        "deducibleFranquicia" : {
+          "type" : "string"
+        },
+        "descripcionDeducibleFranquicia" : {
+          "type" : "string"
+        },
+        "heredaValoresCoberturaPadecimiento" : {
+          "type" : "string"
+        },
+        "descripcionHeredaValoresCoberturaPadecimiento" : {
+          "type" : "string"
+        },
+        "indicadorTiempo" : {
+          "type" : "string"
+        },
+        "descripcionIndicadorTiempo" : {
+          "type" : "string"
+        },
+        "amparaTramiteSubsecuente" : {
+          "type" : "string"
+        },
+        "descripcionAmparaTramiteSubsecuente" : {
+          "type" : "string"
+        },
+        "tiempoEspera" : {
+          "type" : "string"
+        },
+        "unidadTopeSumaAsegurada" : {
+          "type" : "string"
+        },
+        "descripcionTopeSumaAsegurada" : {
+          "type" : "string"
+        },
+        "topeSumaAsegurada" : {
+          "type" : "string"
+        },
+        "periodoMaximoIndemnizacion" : {
+          "type" : "string"
+        },
+        "porcentajeGastosCubiertos" : {
+          "type" : "string"
+        },
+        "codigoSumaAseguradaDiaria" : {
+          "type" : "string"
+        },
+        "descripcionSumaAseguradaDiaria" : {
+          "type" : "string"
+        },
+        "indicadorPreexistencia" : {
+          "type" : "string"
+        },
+        "descripcionIndicadorPreexistencia" : {
+          "type" : "string"
+        },
+        "tipoGasto" : {
+          "type" : "string"
+        },
+        "descripcionTipoGasto" : {
+          "type" : "string"
+        },
+        "modalidadPago" : {
+          "type" : "string"
+        },
+        "descripcionModalidadPago" : {
+          "type" : "string"
+        },
+        "numeroDiasPorMuerteAccidental" : {
+          "type" : "string"
+        },
+        "numeroDiasPorPerdidasOrganicas" : {
+          "type" : "string"
+        },
+        "numeroDiasPorReembolsoGMM" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RespuestaAcumuladosSiniestro" : {
+      "type" : "object",
+      "properties" : {
+        "respuesta" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/AcumuladoSiniestro"
+          }
+        }
+      }
+    },
+    "AcumuladoSiniestro" : {
+      "type" : "object",
+      "properties" : {
+        "codigoCoberturaAfecta" : {
+          "type" : "string"
+        },
+        "tcTipoMovimientoProducido" : {
+          "type" : "string"
+        },
+        "unidadMonedaDeducibleInternacional" : {
+          "type" : "string"
+        },
+        "unidadMonedaDeducibleNacional" : {
+          "type" : "string"
+        },
+        "tcCodigoMonedaSumaAsegurada" : {
+          "type" : "string"
+        },
+        "tcCodigoMonedaCoaseguroInternacional" : {
+          "type" : "string"
+        },
+        "tcCodigoMonedaCoaseguroNacional" : {
+          "type" : "string"
+        },
+        "importeDeducibleCcontratadoExtranjero" : {
+          "type" : "string"
+        },
+        "importeDeducibleExtranjeroPagado" : {
+          "type" : "string"
+        },
+        "importeDeducibleExtranjeroPendiente" : {
+          "type" : "string"
+        },
+        "importeDeducibleContratadoNacional" : {
+          "type" : "string"
+        },
+        "importeDeducibleNacionalPagado" : {
+          "type" : "string"
+        },
+        "importeDeducibleNacionalPendiente" : {
+          "type" : "string"
+        },
+        "importeSumaAseguradaContratada" : {
+          "type" : "string"
+        },
+        "importeSumaAseguradaPagada" : {
+          "type" : "string"
+        },
+        "importeSumaAseguradaRemanente" : {
+          "type" : "string"
+        },
+        "importeTopeCoaseguroNacional" : {
+          "type" : "string"
+        },
+        "importeCoaseguroPagado" : {
+          "type" : "string"
+        },
+        "importeCoaseguroNacionalPendiente" : {
+          "type" : "string"
+        },
+        "contadorNumeroMovimiento" : {
+          "type" : "string"
+        },
+        "codigoReclamacionICD" : {
+          "type" : "string"
+        },
+        "porcentajeCoaseguroContratadoExtranjero" : {
+          "type" : "string"
+        },
+        "porcentajeCoaseguroContratadoNacional" : {
+          "type" : "string"
+        },
+        "codigoCobertura" : {
+          "type" : "string"
+        },
+        "fechaAniversarioReclamacion" : {
+          "type" : "string"
+        },
+        "indicadorDeducibleAnual" : {
+          "type" : "string"
+        },
+        "fechaEfectoMovimiento" : {
+          "type" : "string"
+        },
+        "numeroPersonaInterviniente" : {
+          "type" : "string"
+        },
+        "fechaPrimerGasto" : {
+          "type" : "string"
+        },
+        "sistemaOrigen" : {
+          "type" : "string"
+        },
+        "fechaInicioSintomas" : {
+          "type" : "string"
+        },
+        "codigoSiniestro" : {
+          "type" : "string"
+        },
+        "montoSumaAsegurada" : {
+          "type" : "string"
+        },
+        "montoDeducibleNacional" : {
+          "type" : "string"
+        },
+        "montoDeducibleInternacional" : {
+          "type" : "string"
+        },
+        "montoCoaseguro" : {
+          "type" : "string"
+        },
+        "codigoGrupoPadecimientoIcd9" : {
+          "type" : "string"
+        },
+        "descripcionGrupoPadecimientoIcd9" : {
+          "type" : "string"
+        },
+        "codigoPadecimientoIcd9" : {
+          "type" : "string"
+        },
+        "descripcionPadecimientoIcd9" : {
+          "type" : "string"
+        },
+        "codigoGrupoPadecimientoIcd10" : {
+          "type" : "string"
+        },
+        "descripcionGrupoPadecimientoIc10" : {
+          "type" : "string"
+        },
+        "codigoPadecimientoIcd10" : {
+          "type" : "string"
+        },
+        "descripcionPadecimientoIcd10" : {
+          "type" : "string"
+        },
+        "regionCorporal" : {
+          "type" : "string"
+        },
+        "descripcionRegionCorporal" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RespuestaImportesTransito" : {
+      "type" : "object",
+      "properties" : {
+        "respuesta" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ImporteTransito"
+          }
+        }
+      }
+    },
+    "ImporteTransito" : {
+      "type" : "object",
+      "properties" : {
+        "codigoReclamacionICD" : {
+          "type" : "string"
+        },
+        "claveCobertura" : {
+          "type" : "string"
+        },
+        "descripcionCobertura" : {
+          "type" : "string"
+        },
+        "claveCoberturaAfecta" : {
+          "type" : "string"
+        },
+        "descripcionCoberturaAfecta" : {
+          "type" : "string"
+        },
+        "importeAcumuladoGastosHospitalariosTransito" : {
+          "type" : "string"
+        },
+        "importeAcumuladoHonorarioMedicoTransito" : {
+          "type" : "string"
+        },
+        "claveUnidadGastoMedico" : {
+          "type" : "string"
+        },
+        "descripcionUnidadGastoMedico" : {
+          "type" : "string"
+        },
+        "importeAcumuladoDeducibleNacionalTransito" : {
+          "type" : "string"
+        },
+        "claveUnidadDeducibleNacionalTransito" : {
+          "type" : "string"
+        },
+        "descripcionUnidadDeducibleNacionalTransito" : {
+          "type" : "string"
+        },
+        "importeAcumuladoDeducibleInternacionalTransito" : {
+          "type" : "string"
+        },
+        "claveUnidadDeducibleInternacionalTransito" : {
+          "type" : "string"
+        },
+        "descripcionUnidadDeducibleInternacionalTransito" : {
+          "type" : "string"
+        },
+        "importeAcumuladoCoaseguroHonorariosMedicosNacionalTransito" : {
+          "type" : "string"
+        },
+        "importeAcumuladoCoaseguroGastoHospitalarioNacionalTransito" : {
+          "type" : "object",
+          "properties" : { }
+        },
+        "claveUnidadCoaseguroGastoMedicoNacional" : {
+          "type" : "string"
+        },
+        "descripcionUnidadCoaseguroGastoMedicoNacional" : {
+          "type" : "string"
+        },
+        "importeAcumuladoCoaseguroHonorarioMedicoInternacionalTransito" : {
+          "type" : "string"
+        },
+        "imporrteAcumuladoCoaseguroGastoHospitalarioInternacionalTransito" : {
+          "type" : "string"
+        },
+        "claveUnidadCoaseguroGastoMedicoInternacional" : {
+          "type" : "string"
+        },
+        "descripcionUnidadCoaseguroGastoMedicoInternacional" : {
+          "type" : "string"
+        },
+        "codigoCoberturaSistemasActuales" : {
+          "type" : "string"
+        },
+        "descripcionCoberturaSistemasActuales" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RespuestaDetallePagos" : {
+      "type" : "object",
+      "properties" : {
+        "respuesta" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/DetalleCobertura"
+          }
+        }
+      }
+    },
+    "DetallePago" : {
+      "type" : "object",
+      "properties" : {
+        "tramite" : {
+          "type" : "string"
+        },
+        "factura" : {
+          "type" : "string"
+        },
+        "importeGastado1" : {
+          "type" : "string"
+        },
+        "importeGastado2" : {
+          "type" : "string"
+        },
+        "fechaLiberacionPago" : {
+          "type" : "string"
+        },
+        "fechaContable" : {
+          "type" : "string"
+        },
+        "fechaAnulacionPago" : {
+          "type" : "string"
+        },
+        "fechaPeticionPago" : {
+          "type" : "string"
+        },
+        "fechaEjecucionPago" : {
+          "type" : "string"
+        },
+        "montoDeducible" : {
+          "type" : "string"
+        },
+        "montoCoaseguro" : {
+          "type" : "string"
+        },
+        "montoCoaseguroHonorarioMedico" : {
+          "type" : "string"
+        },
+        "montoCoaseguroFueraHospital" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RespuestaTramitesReclamacion" : {
+      "type" : "object",
+      "properties" : {
+        "respuesta" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/TramiteReclamacion"
+          }
+        }
+      }
+    },
+    "TramiteReclamacion" : {
+      "type" : "object",
+      "properties" : {
+        "numeroTramite" : {
+          "type" : "string"
+        },
+        "estatusDictamen" : {
+          "type" : "string"
+        },
+        "numeroReeclamacion" : {
+          "type" : "string"
+        },
+        "numeroPoliza" : {
+          "type" : "string"
+        },
+        "claveCobertura" : {
+          "type" : "string"
+        },
+        "fechaTramite" : {
+          "type" : "string"
+        },
+        "nombreMedicoTratante" : {
+          "type" : "string"
+        },
+        "modalidad" : {
+          "type" : "string"
+        },
+        "prestadorServicio" : {
+          "type" : "string"
+        },
+        "totalPagado" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RespuestaAseguradosPoliza" : {
+      "type" : "object",
+      "properties" : {
+        "respuesta" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/AseguradoPoliza"
+          }
+        }
+      }
+    },
+    "AseguradoPoliza" : {
+      "type" : "object",
+      "properties" : {
+        "claveAsegurado" : {
+          "type" : "string"
+        },
+        "numeroPoliza" : {
+          "type" : "string"
+        },
+        "polizaCobranza" : {
+          "type" : "string"
+        },
+        "numeroVersionPoliza" : {
+          "type" : "string"
+        },
+        "rfcAsegurado" : {
+          "type" : "string"
+        },
+        "vigenciaPoliza" : {
+          "type" : "string"
+        },
+        "sexoAsegurado" : {
+          "type" : "string"
+        },
+        "claveSistema" : {
+          "type" : "string"
+        },
+        "estatusAsegurado" : {
+          "type" : "string"
+        },
+        "tipoAsegurado" : {
+          "type" : "string"
+        },
+        "fechaAltaAsegurado" : {
+          "type" : "string"
+        },
+        "fechaAntiguedadGnpInternacional" : {
+          "type" : "string"
+        },
+        "fechaAntiguedadGnp" : {
+          "type" : "string"
+        },
+        "fechaAntiguedadOtrasCompanias" : {
+          "type" : "string"
+        },
+        "fechaBajaAsegurado" : {
+          "type" : "string"
+        },
+        "fechaNacimiento" : {
+          "type" : "string"
+        },
+        "nombreCompleto" : {
+          "type" : "string"
+        },
+        "fechaAntiguedadLaboral" : {
+          "type" : "string"
+        },
+        "fechaEspecial" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RespuestaDetallesPoliza" : {
+      "type" : "object",
+      "properties" : {
+        "respuesta" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/DetallePoliza"
+          }
+        }
+      }
+    },
+    "DetallePoliza" : {
+      "type" : "object",
+      "properties" : {
+        "numeroDePoliza" : {
+          "type" : "string"
+        },
+        "codigoPolizaPadre" : {
+          "type" : "string"
+        },
+        "productoComercial" : {
+          "type" : "string"
+        },
+        "productoTecnico" : {
+          "type" : "string"
+        },
+        "secuenciaPolizaPadre" : {
+          "type" : "string"
+        },
+        "versionPoliza" : {
+          "type" : "string"
+        },
+        "estatusPoliza" : {
+          "type" : "string"
+        },
+        "fechaAlcanzadaPago" : {
+          "type" : "string"
+        },
+        "fechaEfectoMovimiento" : {
+          "type" : "string"
+        },
+        "fechaEfectoNatural" : {
+          "type" : "string"
+        },
+        "fechaFinEfecto" : {
+          "type" : "string"
+        },
+        "fechaInicioPoliza" : {
+          "type" : "string"
+        },
+        "fechaVencimientoNatural" : {
+          "type" : "string"
+        },
+        "indicadorMvtoAnuladoPorFaltaPago" : {
+          "type" : "string"
+        },
+        "esquema" : {
+          "type" : "string"
+        },
+        "indicadorPolizaPadre" : {
+          "type" : "string"
+        },
+        "indicadorCirculosMedicos" : {
+          "type" : "string"
+        },
+        "nombrePlan" : {
+          "type" : "string"
+        },
+        "formaPagoTabuladorSiniestros" : {
+          "type" : "string"
+        },
+        "tipoDeducible" : {
+          "type" : "string"
+        },
+        "tipoSumaAsegurada" : {
+          "type" : "string"
+        },
+        "convenioSac" : {
+          "type" : "string"
+        },
+        "descripcionConvenioSac" : {
+          "type" : "string"
+        },
+        "versionConvenioSac" : {
+          "type" : "string"
+        },
+        "pagoComplementoGnp" : {
+          "type" : "string"
+        },
+        "descripcionPagoComplementoGnp" : {
+          "type" : "string"
+        },
+        "indicadorPolizaExceso" : {
+          "type" : "string"
+        },
+        "descripcionIndicadorPolizaExceso" : {
+          "type" : "string"
+        },
+        "numeroDiasPorEnfermedad" : {
+          "type" : "string"
+        },
+        "codigoAfiliacion" : {
+          "type" : "string"
+        },
+        "rfcAsegurado" : {
+          "type" : "string"
+        },
+        "estadoObjeto" : {
+          "type" : "string"
+        },
+        "fechaFinPolizaOtraCompania" : {
+          "type" : "string"
+        },
+        "fechaAntiguedadGnpNacional" : {
+          "type" : "string"
+        },
+        "fechaInicioPolizaOtraCompania" : {
+          "type" : "string"
+        },
+        "fechaAntiguedadGnpInternacional" : {
+          "type" : "string"
+        },
+        "fechaAntiguedadOtraCompaniaNacional" : {
+          "type" : "string"
+        },
+        "fechaNacimientoAsegurado" : {
+          "type" : "string"
+        },
+        "fechaFinObjeto" : {
+          "type" : "string"
+        },
+        "fechaInicioObjeto" : {
+          "type" : "string"
+        },
+        "penalizacionHospitalaria" : {
+          "type" : "string"
+        },
+        "indicadorDeducibleAnual" : {
+          "type" : "string"
+        },
+        "indicadorParentesco" : {
+          "type" : "string"
+        },
+        "indicadorTitularDependiente" : {
+          "type" : "string"
+        },
+        "apellidoPaternoAsegurado" : {
+          "type" : "string"
+        },
+        "apellidoMaternoAsegurado" : {
+          "type" : "string"
+        },
+        "nombreAsegurado" : {
+          "type" : "string"
+        },
+        "deducibleAnual" : {
+          "type" : "string"
+        }
+      }
+    },
+    "RespuestaRecibosPoliza" : {
+      "type" : "object",
+      "properties" : {
+        "respuesta" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ReciboPoliza"
+          }
+        }
+      }
+    },
+    "ReciboPoliza" : {
+      "type" : "object",
+      "properties" : {
+        "numeroPoliza" : {
+          "type" : "string"
+        },
+        "numeroRecibo" : {
+          "type" : "string"
+        },
+        "numeroPolizaCobranza" : {
+          "type" : "string"
+        },
+        "versionPoliza" : {
+          "type" : "string"
+        },
+        "fechaEmision" : {
+          "type" : "string"
+        },
+        "estatusRecibo" : {
+          "type" : "string"
+        },
+        "fechaInicioVigenciaRecibo" : {
+          "type" : "string"
+        },
+        "fechaTerminoVigenciaRecibo" : {
+          "type" : "string"
+        }
+      }
+    }
+  },
+  "schemes" : [ "http" ],
+  "host" : "javieri:7800"
+}
